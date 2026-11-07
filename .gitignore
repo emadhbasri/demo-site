@@ -147,4 +147,7 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
-/.claude
+
+# graphify: keep only the report tracked
+graphify-out/*
+!graphify-out/GRAPH_REPORT.md
