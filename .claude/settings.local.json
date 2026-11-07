@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(mkdir -p app/fonts)",
+      "Bash(curl -fsSL -m 60 -o app/fonts/Vazirmatn[wght].woff2 \"https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn%5Bwght%5D.woff2\")",
+      "Bash(file app/fonts/*)"
     ]
   }
 }
