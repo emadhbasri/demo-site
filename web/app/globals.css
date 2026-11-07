@@ -1,0 +1,246 @@
+:root {
+  --brown: #6f4e37;
+  --roast: #3b2a1e;
+  --cream: #f5ebdd;
+  --paper: #fbf6ee;
+  --crema: #c9a27a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--cream);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  overflow-x: clip;
+  background: var(--cream);
+  color: var(--roast);
+  font-family: var(--font-vazir), 'Tahoma', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.intro {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100dvh;
+  max-width: 32rem;
+  margin-inline: auto;
+  padding: 3.5rem 1.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* The one memorable thing: a coffee-cup ring left on the page, behind the title. */
+.intro::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset-block-start: -4.5rem;
+  inset-inline-end: -5rem;
+  width: 15rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.9rem solid var(--crema);
+  opacity: 0.45;
+  box-shadow: inset 0 0 0 0.2rem var(--brown);
+  transform: rotate(-12deg) scaleY(0.96);
+}
+
+.intro-head h1 {
+  margin: 0 0 0.25rem;
+  color: var(--brown);
+  font-size: clamp(3.5rem, 20vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.intro-head .tagline {
+  margin: 0 0 1.25rem;
+  color: var(--brown);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.intro-head p {
+  margin: 0;
+  max-width: 28rem;
+  font-size: 1.0625rem;
+}
+
+.intro-info {
+  margin: 0;
+  padding: 1.25rem 1.25rem;
+  background: var(--paper);
+  border-inline-start: 0.25rem solid var(--brown);
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.intro-info dt {
+  color: var(--brown);
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.intro-info dd {
+  margin: 0;
+}
+
+.intro-actions {
+  margin-block-start: auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding-inline: 1.5rem;
+  border: 2px solid var(--brown);
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-primary {
+  min-height: 3.75rem;
+  background: var(--brown);
+  color: var(--cream);
+  font-size: 1.25rem;
+  font-weight: 800;
+  box-shadow: 0 0.35rem 0 var(--roast);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--brown);
+  border-width: 1px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: var(--roast);
+  border-color: var(--roast);
+}
+
+.btn-secondary:hover {
+  background: var(--paper);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--roast);
+  outline-offset: 3px;
+}
+
+@media (min-width: 40rem) {
+  .intro {
+    min-height: auto;
+    padding-block-start: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
+/* Contact page */
+.page {
+  max-width: 32rem;
+  margin-inline: auto;
+  padding: 2.5rem 1.25rem;
+}
+
+.page h1 {
+  margin: 0 0 0.25rem;
+  color: var(--brown);
+  font-weight: 900;
+}
+
+.page .lead {
+  margin: 0 0 1.5rem;
+}
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.field label {
+  display: block;
+  margin-block-end: 0.25rem;
+  color: var(--brown);
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--crema);
+  border-radius: 0.5rem;
+  background: var(--paper);
+  color: var(--roast);
+  font: inherit;
+  text-align: start;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 3px solid var(--brown);
+  outline-offset: 2px;
+}
+
+.field-error {
+  margin: 0.25rem 0 0;
+  color: #9b2c1f;
+  font-size: 0.9375rem;
+}
+
+.notice {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--paper);
+  border-inline-start: 0.25rem solid var(--brown);
+  border-radius: 0.5rem;
+}
+
+.notice p {
+  margin: 0;
+  font-weight: 700;
+}
+
+button.btn {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.back-link {
+  display: inline-block;
+  margin-block-start: 1.5rem;
+  color: var(--brown);
+}
